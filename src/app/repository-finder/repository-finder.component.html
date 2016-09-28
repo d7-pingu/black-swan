@@ -1,0 +1,35 @@
+<header>
+  <h2>{{title}}</h2>
+</header>
+
+<article>
+  <section>
+    <div class="row">
+      <div class="col-md-12">
+        <form class="form-inline">
+          <input [(ngModel)]="keyword" name="keyword" placeholder="Keyword" class="form-control">
+          <button (click)="search()" [disabled]="!isKeyword()" class="btn btn-primary">{{searchButtonContent}}</button>
+        </form>
+      </div>
+    </div>    
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-md-12">
+        <app-results [results]="results" [keyword]="keyword" [numberOfSearches]="numberOfSearches" 
+        (updateIssues)="updateIssues()"></app-results>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-md-12">
+        <app-issues [issues]="availableIssues"></app-issues>
+      </div>
+    </div>
+  </section>    
+</article>
+
+<footer>
+  <p></p>
+</footer>

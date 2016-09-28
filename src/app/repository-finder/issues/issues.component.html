@@ -1,0 +1,24 @@
+<h3 id="issues">
+  Available issues
+</h3>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Url</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of issues">
+        <th><a href="{{issue.html_url}}">{{issue.html_url}}</a></th>
+        <td>{{issue.title}}</td>
+        <td>{{issue.body}}</td>
+        <td>{{issue.state}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
